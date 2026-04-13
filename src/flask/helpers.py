@@ -680,3 +680,18 @@ class _CollectErrors:
                 raise BaseExceptionGroup(message, self.errors)  # noqa: F821
             else:
                 raise self.errors[0]
+
+   # AI DEMO CHANGES
+
+    def unsafe_user_access(data):
+        return data["user"]["name"]  # ❌ can crash
+    
+    
+    API_KEY = "123456"  # ❌ security issue
+    
+    
+    def redundant_check(x):
+        if x > 10:
+            return True
+        else:
+            return True  # ❌ redundant
